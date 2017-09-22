@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/python/emacs配置python开发环境/" data-id="cj7vxq1jj001du2jxht7rri1l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/22/python/emacs配置python开发环境/" data-id="cj7vy5d9y000vq3jx7j9rrs5i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emacs/">emacs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -331,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/tools/markdown使用手册/" data-id="cj7vxq1jt001ru2jxkeszm2rs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/22/tools/markdown使用手册/" data-id="cj7vy5daf001tq3jxaql5q2ju" class="article-share-link">Share</a>
       
       
     </footer>
@@ -374,177 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/python/virtualenv创建虚拟python环境/" data-id="cj7vxq1jd001au2jxsqagqwq5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mininet/mininet模拟DHCP请求的topo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/22/mininet/mininet模拟DHCP请求的topo/" class="article-date">
-  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mininet/">mininet</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/22/mininet/mininet模拟DHCP请求的topo/">mininet模拟DHCP请求的topo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="mininet模拟DHCP请求的topo"><a href="#mininet模拟DHCP请求的topo" class="headerlink" title="mininet模拟DHCP请求的topo"></a>mininet模拟DHCP请求的topo</h3><pre><code>以下代码是通过mininet创建的一个topo，其中switch是直接于控制器连接的，h1和h2是
-通过switch的openflow通道向控制器发送DHCP请求，实现ip请求并且建立openflow连接
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">from</span> mininet.net <span class="keyword">import</span> Mininet</div><div class="line"><span class="keyword">from</span> mininet.node <span class="keyword">import</span> Controller, RemoteController</div><div class="line"><span class="keyword">from</span> mininet.cli <span class="keyword">import</span> CLI</div><div class="line"><span class="keyword">from</span> mininet.link <span class="keyword">import</span> Intf</div><div class="line"><span class="keyword">from</span> mininet.log <span class="keyword">import</span> setLogLevel, info</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">ToRealnet</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">    c0 = RemoteController( <span class="string">'c0'</span>, ip=<span class="string">'10.190.23.112'</span>, port=<span class="number">6653</span> )  </div><div class="line">    net = Mininet( topo=<span class="keyword">None</span>, build=<span class="keyword">False</span>)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Adding controller\n'</span> )</div><div class="line">    net.addController(c0)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Add switches\n'</span>)</div><div class="line">    s1 = net.addSwitch(<span class="string">'s1'</span>)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Add hosts\n'</span>)</div><div class="line">    h1 = net.addHost(<span class="string">'h1'</span>, ip=<span class="string">'0.0.0.0'</span>)</div><div class="line">    h2 = net.addHost(<span class="string">'h2'</span>, ip=<span class="string">'0.0.0.0'</span>)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Add links\n'</span>)</div><div class="line">    net.addLink(h1, s1)</div><div class="line">    net.addLink(h2, s1)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Starting network\n'</span>)</div><div class="line">    net.start()</div><div class="line">    os.popen(<span class="string">'ovs-vsctl add-port s1 eth0'</span>)       </div><div class="line">    h1.cmdPrint(<span class="string">'dhclient '</span>+h1.defaultIntf().name)      </div><div class="line">    h2.cmdPrint(<span class="string">'dhclient '</span>+h2.defaultIntf().name)      </div><div class="line">    CLI(net)</div><div class="line">    net.stop()</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    setLogLevel( <span class="string">'info'</span> )</div><div class="line">    ToRealnet()</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/mininet/mininet模拟DHCP请求的topo/" data-id="cj7vxq1iw000pu2jx8ybqnmt0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-maven/maven可选依赖" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/22/maven/maven可选依赖/" class="article-date">
-  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/maven/">maven</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/22/maven/maven可选依赖/">maven可选依赖</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2017/09/22/maven/maven可选依赖/../../picture/maven_2.png" alt=""></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/maven/maven可选依赖/" data-id="cj7vxq1jv001tu2jxs6d1hiyc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-maven/maven依赖范围和classpath的关系scpoe标签" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/" class="article-date">
-  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/maven/">maven</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/">maven依赖范围和classpath的关系scpoe标签</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/../../picture/maven_4.png" alt=""></p>
-<p><strong>左边是第一依赖，右边是第二依赖</strong>  </p>
-<p><img src="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/../../picture/maven_5.png" alt=""></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/" data-id="cj7vxq1ju001su2jx2vgpgks5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python/python学习重点文章" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/22/python/python学习重点文章/" class="article-date">
-  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/22/python/python学习重点文章/">python学习重点文章</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">函数的参数</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/python/python学习重点文章/" data-id="cj7vxq1j50019u2jxb4fqch6r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/22/python/virtualenv创建虚拟python环境/" data-id="cj7vy5da20015q3jx1v0yk646" class="article-share-link">Share</a>
       
       
     </footer>
@@ -587,7 +417,134 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/onos/onos源码获取/" data-id="cj7vxq1iv000mu2jx2c7qxtwb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/22/onos/onos源码获取/" data-id="cj7vy5d9v000qq3jxc7f3nopb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-maven/maven可选依赖" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/maven/maven可选依赖/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/maven/">maven</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/maven/maven可选依赖/">maven可选依赖</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2017/09/22/maven/maven可选依赖/../../picture/maven_2.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/maven/maven可选依赖/" data-id="cj7vy5daq001xq3jxro2bfqyf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-maven/maven依赖范围和classpath的关系scpoe标签" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/maven/">maven</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/">maven依赖范围和classpath的关系scpoe标签</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/../../picture/maven_4.png" alt=""></p>
+<p><strong>左边是第一依赖，右边是第二依赖</strong>  </p>
+<p><img src="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/../../picture/maven_5.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/" data-id="cj7vy5dai001wq3jxtlqd0anp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mininet/mininet模拟DHCP请求的topo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/mininet/mininet模拟DHCP请求的topo/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mininet/">mininet</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/mininet/mininet模拟DHCP请求的topo/">mininet模拟DHCP请求的topo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="mininet模拟DHCP请求的topo"><a href="#mininet模拟DHCP请求的topo" class="headerlink" title="mininet模拟DHCP请求的topo"></a>mininet模拟DHCP请求的topo</h3><pre><code>以下代码是通过mininet创建的一个topo，其中switch是直接于控制器连接的，h1和h2是
+通过switch的openflow通道向控制器发送DHCP请求，实现ip请求并且建立openflow连接
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">from</span> mininet.net <span class="keyword">import</span> Mininet</div><div class="line"><span class="keyword">from</span> mininet.node <span class="keyword">import</span> Controller, RemoteController</div><div class="line"><span class="keyword">from</span> mininet.cli <span class="keyword">import</span> CLI</div><div class="line"><span class="keyword">from</span> mininet.link <span class="keyword">import</span> Intf</div><div class="line"><span class="keyword">from</span> mininet.log <span class="keyword">import</span> setLogLevel, info</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">ToRealnet</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">    c0 = RemoteController( <span class="string">'c0'</span>, ip=<span class="string">'10.190.23.112'</span>, port=<span class="number">6653</span> )  </div><div class="line">    net = Mininet( topo=<span class="keyword">None</span>, build=<span class="keyword">False</span>)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Adding controller\n'</span> )</div><div class="line">    net.addController(c0)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Add switches\n'</span>)</div><div class="line">    s1 = net.addSwitch(<span class="string">'s1'</span>)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Add hosts\n'</span>)</div><div class="line">    h1 = net.addHost(<span class="string">'h1'</span>, ip=<span class="string">'0.0.0.0'</span>)</div><div class="line">    h2 = net.addHost(<span class="string">'h2'</span>, ip=<span class="string">'0.0.0.0'</span>)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Add links\n'</span>)</div><div class="line">    net.addLink(h1, s1)</div><div class="line">    net.addLink(h2, s1)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Starting network\n'</span>)</div><div class="line">    net.start()</div><div class="line">    os.popen(<span class="string">'ovs-vsctl add-port s1 eth0'</span>)       </div><div class="line">    h1.cmdPrint(<span class="string">'dhclient '</span>+h1.defaultIntf().name)      </div><div class="line">    h2.cmdPrint(<span class="string">'dhclient '</span>+h2.defaultIntf().name)      </div><div class="line">    CLI(net)</div><div class="line">    net.stop()</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    setLogLevel( <span class="string">'info'</span> )</div><div class="line">    ToRealnet()</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/mininet/mininet模拟DHCP请求的topo/" data-id="cj7vy5d9u000lq3jxp95yokil" class="article-share-link">Share</a>
       
       
     </footer>
@@ -641,7 +598,50 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/problem/eclipse安装svn提示javaHL出错/" data-id="cj7vxq1it000ku2jxd6qjfn4s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/22/problem/eclipse安装svn提示javaHL出错/" data-id="cj7vy5da00011q3jx8f8wtk7b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python/python学习重点文章" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/python/python学习重点文章/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/python/python学习重点文章/">python学习重点文章</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">函数的参数</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/python/python学习重点文章/" data-id="cj7vy5d9z000xq3jxvpwuw1wq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -686,7 +686,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/hello-world/" data-id="cj7vxq1gx0000u2jxgrzeoe5l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/22/hello-world/" data-id="cj7vy5d8h0000q3jx2y6wjuns" class="article-share-link">Share</a>
       
       
     </footer>
@@ -707,7 +707,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorier</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DHCP/">DHCP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/emacs/">emacs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/karaf/">karaf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/maven/">maven</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mininet/">mininet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/onos/">onos</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/problem/">problem</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li></ul>
     </div>
@@ -736,7 +736,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Arkiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
     </div>
@@ -746,7 +746,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Siste innlegg</h3>
     <div class="widget">
       <ul>
         
@@ -763,7 +763,7 @@
           </li>
         
           <li>
-            <a href="/2017/09/22/mininet/mininet模拟DHCP请求的topo/">mininet模拟DHCP请求的topo</a>
+            <a href="/2017/09/22/onos/onos源码获取/">onos源码获取</a>
           </li>
         
           <li>
