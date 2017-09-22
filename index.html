@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -61,10 +61,600 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python/emacs配置python开发环境" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/python/emacs配置python开发环境/" class="article-date">
+  <time datetime="2017-09-22T13:32:40.389Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/python/emacs配置python开发环境/">emacs配置python开发环境</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="配置流程"><a href="#配置流程" class="headerlink" title="配置流程"></a>配置流程</h3><ol>
+<li><p>修改emacs获取包的源（emacs的配置文件当中，比如说.emacs或者自定义的配置文件），这样下载会快一点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(setq package-archives &apos;((&quot;gnu&quot;   . &quot;http://elpa.emacs-china.org/gnu/&quot;)</div><div class="line">                         (&quot;melpa&quot; . &quot;http://elpa.emacs-china.org/melpa/&quot;)))</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开emacs，通过M-X package-list-packages查看可安装的包目录，可通过点击来安装需要的包</p>
+</li>
+<li><p>修改配置让安装的包可以启动，在配置文件中需要添加一下代码可以让emacs能找到对应的包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(require &apos;package)</div></pre></td></tr></table></figure>
+</li>
+<li><p>比如说我要安装一个主题（metarial-theme）</p>
+<ol>
+<li>执行M-X package-list-packages,找到对应的metarial-theme的包，然后点击install</li>
+<li>修改.emacs文件，添加代码(load-theme ‘material t)，然后重新启动（注意，记得添加require）</li>
+</ol>
+</li>
+<li>安装python编辑环境的时候先安装flake8,jedi(代码语法检查和自动补齐的包)<ol>
+<li>可通过打开cmd，然后执行python -m pip install flake8来安装</li>
+<li>jedi类似</li>
+</ol>
+</li>
+<li>通过M-x package-list-packages 找到elpy包进行安装，elpy（Emacs Lisp Python Environment）插件可以说为我们提供了Python开发环境所需要的几乎全部功能，包括：<ul>
+<li>自动缩进</li>
+<li>语法高亮</li>
+<li>自动补全</li>
+<li>语法检查</li>
+<li>REPL集成</li>
+<li>虚拟环境支持，以及</li>
+<li>更多其他功能</li>
+</ul>
+</li>
+<li>在配置文件中添加(elpy enable),然后重新启动就行了</li>
+</ol>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><a href="http://codingpy.com/article/emacs-the-best-python-editor/" target="_blank" rel="external">http://codingpy.com/article/emacs-the-best-python-editor/</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/python/emacs配置python开发环境/" data-id="cj7vxf7eo0013hwjx0x9hqxar" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emacs/">emacs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python/virtualenv创建虚拟python环境" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/python/virtualenv创建虚拟python环境/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.473Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/python/virtualenv创建虚拟python环境/">virtualenv创建虚拟python环境</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="virtualenv创建虚拟python环境"><a href="#virtualenv创建虚拟python环境" class="headerlink" title="virtualenv创建虚拟python环境"></a>virtualenv创建虚拟python环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv   --no-site-packages -p  /usr/bin/python3 venv</div></pre></td></tr></table></figure>
+<p><strong>说明：</strong>（-p指定python的版本， –no-site-packages表示不安装第三方的python包到虚拟环境）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">source ./bin/activate</div><div class="line"></div><div class="line">deactivate</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/python/virtualenv创建虚拟python环境/" data-id="cj7vxf7eq0018hwjxigi8dwvo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-tools/markdown使用手册" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/tools/markdown使用手册/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.473Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/tools/markdown使用手册/">markdown使用手册</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2><blockquote>
+<h4 id="Markdown是什么？"><a href="#Markdown是什么？" class="headerlink" title="Markdown是什么？"></a>Markdown<em>是什么</em>？</h4><h4 id="谁创造了它？"><a href="#谁创造了它？" class="headerlink" title="谁创造了它？"></a><em>谁</em>创造了它？</h4><h4 id="为什么要使用它？"><a href="#为什么要使用它？" class="headerlink" title="为什么要使用它？"></a><em>为什么</em>要使用它？</h4><h4 id="怎么使用？"><a href="#怎么使用？" class="headerlink" title="怎么使用？"></a><em>怎么</em>使用？</h4><h4 id="谁在用？"><a href="#谁在用？" class="headerlink" title="谁在用？"></a><em>谁</em>在用？</h4><h4 id="尝试一下"><a href="#尝试一下" class="headerlink" title="尝试一下"></a>尝试一下</h4></blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-Markdown是什么？"><a href="#1-Markdown是什么？" class="headerlink" title="1. Markdown是什么？"></a>1. Markdown<em>是什么</em>？</h3><p><strong>Markdown</strong>是一种轻量级<strong>标记语言</strong>，它以纯文本形式(<em>易读、易写、易更改</em>)编写文档，并最终以HTML格式发布。<br><strong>Markdown</strong>也可以理解为将以MARKDOWN语法编写的语言转换成HTML内容的工具。    </p>
+<h3 id="2-谁创造了它？"><a href="#2-谁创造了它？" class="headerlink" title="2. 谁创造了它？"></a>2. <em>谁</em>创造了它？</h3><p>它由<a href="http://www.aaronsw.com/" target="_blank" rel="external"><strong>Aaron Swartz</strong></a>和<strong>John Gruber</strong>共同设计，<strong>Aaron Swartz</strong>就是那位于去年（<em>2013年1月11日</em>）自杀,有着<strong>开挂</strong>一般人生经历的程序员。维基百科对他的<a href="http://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%A6%C2%B7%E6%96%AF%E6%B2%83%E8%8C%A8" target="_blank" rel="external">介绍</a>是：<strong>软件工程师、作家、政治组织者、互联网活动家、维基百科人</strong>。    </p>
+<p>他有着足以让你跪拜的人生经历：    </p>
+<ul>
+<li><strong>14岁</strong>参与RSS 1.0规格标准的制订。     </li>
+<li><strong>2004</strong>年入读<strong>斯坦福</strong>，之后退学。   </li>
+<li><strong>2005</strong>年创建<a href="http://infogami.org/" target="_blank" rel="external">Infogami</a>，之后与<a href="http://www.reddit.com/" target="_blank" rel="external">Reddit</a>合并成为其合伙人。   </li>
+<li><strong>2010</strong>年创立求进会（Demand Progress），积极参与禁止网络盗版法案（SOPA）活动，最终该提案被撤回。   </li>
+<li><strong>2011</strong>年7月19日，因被控从MIT和JSTOR下载480万篇学术论文并以免费形式上传于网络被捕。     </li>
+<li><strong>2013</strong>年1月自杀身亡。    </li>
+</ul>
+<p><img src="https://github.com/younghz/Markdown/raw/master/resource/Aaron_Swartz.jpg" alt="Aaron Swartz"></p>
+<p>天才都有早逝的归途。</p>
+<h3 id="3-为什么要使用它？"><a href="#3-为什么要使用它？" class="headerlink" title="3. 为什么要使用它？"></a>3. <em>为什么</em>要使用它？</h3><ul>
+<li>它是易读（看起开舒服）、易写（语法简单）、易更改<strong>纯文本</strong>。处处体现着<strong>极简主义</strong>的影子。</li>
+<li>兼容HTML，可以转换为HTML格式发布。</li>
+<li>跨平台使用。</li>
+<li>越来越多的网站支持Markdown。</li>
+<li>更方便清晰的组织你的电子邮件。（Markdown-here, Airmail）</li>
+<li>摆脱Word（我不是认真的）。</li>
+</ul>
+<h3 id="4-怎么使用？"><a href="#4-怎么使用？" class="headerlink" title="4. 怎么使用？"></a>4. <em>怎么</em>使用？</h3><p>如果不算<strong>扩展</strong>，Markdown的语法绝对<strong>简单</strong>到让你爱不释手。</p>
+<p>Markdown语法主要分为如下几大部分：<br><strong>标题</strong>，<strong>段落</strong>，<strong>区块引用</strong>，<strong>代码区块</strong>，<strong>强调</strong>，<strong>列表</strong>，<strong>分割线</strong>，<strong>链接</strong>，<strong>图片</strong>，<strong>反斜杠 <code>\</code></strong>，<strong>符号’`’</strong>。</p>
+<h4 id="4-1-标题"><a href="#4-1-标题" class="headerlink" title="4.1 标题"></a>4.1 标题</h4><p>两种形式：<br>1）使用<code>=</code>和<code>-</code>标记一级和二级标题。</p>
+<blockquote>
+<p>一级标题<br><code>=========</code><br>二级标题<br><code>---------</code></p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题   "></a>一级标题   </h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2></blockquote>
+<p>2）使用<code>#</code>，可表示1-6级标题。</p>
+<blockquote>
+<p># 一级标题<br>## 二级标题<br>### 三级标题<br>#### 四级标题<br>##### 五级标题<br>###### 六级标题    </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<h1 id="一级标题-1"><a href="#一级标题-1" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题-1"><a href="#二级标题-1" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></blockquote>
+<h4 id="4-2-段落"><a href="#4-2-段落" class="headerlink" title="4.2 段落"></a>4.2 段落</h4><p>段落的前后要有空行，所谓的空行是指没有文字内容。若想在段内强制换行的方式是使用<strong>两个以上</strong>空格加上回车（引用中换行省略回车）。</p>
+<h4 id="4-3-区块引用"><a href="#4-3-区块引用" class="headerlink" title="4.3 区块引用"></a>4.3 区块引用</h4><p>在段落的每行或者只在第一行使用符号<code>&gt;</code>,还可使用多个嵌套引用，如：</p>
+<blockquote>
+<p>> 区块引用<br>>&gt; 嵌套引用  </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p>区块引用  </p>
+<blockquote>
+<p>嵌套引用</p>
+</blockquote>
+</blockquote>
+<h4 id="4-4-代码区块"><a href="#4-4-代码区块" class="headerlink" title="4.4 代码区块"></a>4.4 代码区块</h4><p>代码区块的建立是在每行加上4个空格或者一个制表符（如同写代码一样）。如<br>普通段落：</p>
+<p>void main()<br>{<br>    printf(“Hello, Markdown.”);<br>}    </p>
+<p>代码区块：</p>
+<pre><code>void main()
+{
+    printf(&quot;Hello, Markdown.&quot;);
+}
+</code></pre><p><strong>注意</strong>:需要和普通段落之间存在空行。</p>
+<h4 id="4-5-强调"><a href="#4-5-强调" class="headerlink" title="4.5 强调"></a>4.5 强调</h4><p>在强调内容两侧分别加上<code>*</code>或者<code>_</code>，如：</p>
+<blockquote>
+<p>*斜体*，_斜体_<br>**粗体**，__粗体__</p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><em>斜体</em>，<em>斜体</em><br><strong>粗体</strong>，<strong>粗体</strong></p>
+</blockquote>
+<h4 id="4-6-列表"><a href="#4-6-列表" class="headerlink" title="4.6 列表"></a>4.6 列表</h4><p>使用<code>·</code>、<code>+</code>、或<code>-</code>标记无序列表，如：</p>
+<blockquote>
+<p>-（+*） 第一项<br>-（+*） 第二项<br>- （+*）第三项</p>
+</blockquote>
+<p><strong>注意</strong>：标记后面最少有一个<em>空格</em>或<em>制表符</em>。若不在引用区块中，必须和前方段落之间存在空行。</p>
+<p>效果：</p>
+<blockquote>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<p>有序列表的标记方式是将上述的符号换成数字,并辅以<code>.</code>，如：</p>
+<blockquote>
+<p>1 . 第一项<br>2 . 第二项<br>3 . 第三项    </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+</blockquote>
+<h4 id="4-7-分割线"><a href="#4-7-分割线" class="headerlink" title="4.7 分割线"></a>4.7 分割线</h4><p>分割线最常使用就是三个或以上<code>*</code>，还可以使用<code>-</code>和<code>_</code>。</p>
+<h4 id="4-8-链接"><a href="#4-8-链接" class="headerlink" title="4.8 链接"></a>4.8 链接</h4><p>链接可以由两种形式生成：<strong>行内式</strong>和<strong>参考式</strong>。<br><strong>行内式</strong>：</p>
+<blockquote>
+<p>[younghz的Markdown库](https:://github.com/younghz/Markdown “Markdown”)。</p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><a href="https:://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="external">younghz的Markdown库</a>。</p>
+</blockquote>
+<p><strong>参考式</strong>：</p>
+<blockquote>
+<p>[younghz的Markdown库1][1]<br>[younghz的Markdown库2][2]<br>[1]:https:://github.com/younghz/Markdown “Markdown”<br>[2]:https:://github.com/younghz/Markdown “Markdown”    </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><a href="https:://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="external">younghz的Markdown库1</a><br><a href="https:://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="external">younghz的Markdown库2</a></p>
+</blockquote>
+<p><strong>注意</strong>：上述的<code>[1]:https:://github.com/younghz/Markdown &quot;Markdown&quot;</code>不出现在区块中。</p>
+<h4 id="4-9-图片"><a href="#4-9-图片" class="headerlink" title="4.9 图片"></a>4.9 图片</h4><p>添加图片的形式和链接相似，只需在链接的基础上前方加一个<code>！</code>。</p>
+<h4 id="4-10-反斜杠"><a href="#4-10-反斜杠" class="headerlink" title="4.10 反斜杠\"></a>4.10 反斜杠<code>\</code></h4><p>相当于<strong>反转义</strong>作用。使符号成为普通符号。</p>
+<h4 id="4-11-符号’-’"><a href="#4-11-符号’-’" class="headerlink" title="4.11 符号’`’"></a>4.11 符号’`’</h4><p>起到标记作用。如：</p>
+<blockquote>
+<p>`ctrl+a`</p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><code>ctrl+a</code>    </p>
+</blockquote>
+<h4 id="5-谁在用？"><a href="#5-谁在用？" class="headerlink" title="5. 谁在用？"></a>5. <em>谁</em>在用？</h4><p>Markdown的使用者：</p>
+<ul>
+<li>GitHub</li>
+<li>简书</li>
+<li>Stack Overflow</li>
+<li>Apollo</li>
+<li>Moodle</li>
+<li>Reddit</li>
+<li>等等</li>
+</ul>
+<h4 id="6-尝试一下"><a href="#6-尝试一下" class="headerlink" title="6. 尝试一下"></a>6. 尝试一下</h4><ul>
+<li><strong>Chrome</strong>下的插件诸如<code>stackedit</code>与<code>markdown-here</code>等非常方便，也不用担心平台受限。</li>
+<li><strong>在线</strong>的dillinger.io评价也不错   </li>
+<li><strong>Windowns</strong>下的MarkdownPad也用过，不过免费版的体验不是很好。    </li>
+<li><strong>Mac</strong>下的Mou是国人贡献的，口碑很好。</li>
+<li><strong>Linux</strong>下的ReText不错。    </li>
+</ul>
+<p><strong>当然，最终境界永远都是笔下是语法，心中格式化 :)。</strong></p>
+<hr>
+<p><strong>注意</strong>：不同的Markdown解释器或工具对相应语法（扩展语法）的解释效果不尽相同，具体可参见工具的使用说明。<br>虽然有人想出面搞一个所谓的标准化的Markdown，[没想到还惹怒了健在的创始人John Gruber]<br>(<a href="http://blog.codinghorror.com/standard-markdown-is-now-common-markdown/)。" target="_blank" rel="external">http://blog.codinghorror.com/standard-markdown-is-now-common-markdown/)。</a></p>
+<hr>
+<p>以上基本是所有traditonal markdown的语法。</p>
+<h3 id="其它："><a href="#其它：" class="headerlink" title="其它："></a>其它：</h3><p>列表的使用(非traditonal markdown)：</p>
+<p>用<code>|</code>表示表格纵向边界，表头和表内容用<code>-</code>隔开，并可用<code>:</code>进行对齐设置，两边都有<code>:</code>则表示居中，若不加<code>:</code>则默认左对齐。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">代码库</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">MarkDown</td>
+<td><a href="https://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="external">https://github.com/younghz/Markdown</a></td>
+</tr>
+<tr>
+<td style="text-align:center">MarkDownCopy</td>
+<td><a href="https://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="external">https://github.com/younghz/Markdown</a></td>
+</tr>
+</tbody>
+</table>
+<p>关于其它扩展语法可参见具体工具的使用说明。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/tools/markdown使用手册/" data-id="cj7vxf7en0012hwjxnujvxy98" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mininet/mininet模拟DHCP请求的topo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/mininet/mininet模拟DHCP请求的topo/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mininet/">mininet</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/mininet/mininet模拟DHCP请求的topo/">mininet模拟DHCP请求的topo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="mininet模拟DHCP请求的topo"><a href="#mininet模拟DHCP请求的topo" class="headerlink" title="mininet模拟DHCP请求的topo"></a>mininet模拟DHCP请求的topo</h3><pre><code>以下代码是通过mininet创建的一个topo，其中switch是直接于控制器连接的，h1和h2是
+通过switch的openflow通道向控制器发送DHCP请求，实现ip请求并且建立openflow连接
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">from</span> mininet.net <span class="keyword">import</span> Mininet</div><div class="line"><span class="keyword">from</span> mininet.node <span class="keyword">import</span> Controller, RemoteController</div><div class="line"><span class="keyword">from</span> mininet.cli <span class="keyword">import</span> CLI</div><div class="line"><span class="keyword">from</span> mininet.link <span class="keyword">import</span> Intf</div><div class="line"><span class="keyword">from</span> mininet.log <span class="keyword">import</span> setLogLevel, info</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">ToRealnet</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">    c0 = RemoteController( <span class="string">'c0'</span>, ip=<span class="string">'10.190.23.112'</span>, port=<span class="number">6653</span> )  </div><div class="line">    net = Mininet( topo=<span class="keyword">None</span>, build=<span class="keyword">False</span>)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Adding controller\n'</span> )</div><div class="line">    net.addController(c0)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Add switches\n'</span>)</div><div class="line">    s1 = net.addSwitch(<span class="string">'s1'</span>)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Add hosts\n'</span>)</div><div class="line">    h1 = net.addHost(<span class="string">'h1'</span>, ip=<span class="string">'0.0.0.0'</span>)</div><div class="line">    h2 = net.addHost(<span class="string">'h2'</span>, ip=<span class="string">'0.0.0.0'</span>)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Add links\n'</span>)</div><div class="line">    net.addLink(h1, s1)</div><div class="line">    net.addLink(h2, s1)</div><div class="line"></div><div class="line">    info( <span class="string">'*** Starting network\n'</span>)</div><div class="line">    net.start()</div><div class="line">    os.popen(<span class="string">'ovs-vsctl add-port s1 eth0'</span>)       </div><div class="line">    h1.cmdPrint(<span class="string">'dhclient '</span>+h1.defaultIntf().name)      </div><div class="line">    h2.cmdPrint(<span class="string">'dhclient '</span>+h2.defaultIntf().name)      </div><div class="line">    CLI(net)</div><div class="line">    net.stop()</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    setLogLevel( <span class="string">'info'</span> )</div><div class="line">    ToRealnet()</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/mininet/mininet模拟DHCP请求的topo/" data-id="cj7vxf7ef000ohwjx5k414enr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python/python学习重点文章" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/python/python学习重点文章/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/python/python学习重点文章/">python学习重点文章</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431752945034eb82ac80a3e64b9bb4929b16eeed1eb9000" target="_blank" rel="external">函数的参数</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/python/python学习重点文章/" data-id="cj7vxf7eu001ghwjxkttmsdvo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-maven/maven可选依赖" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/maven/maven可选依赖/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/maven/">maven</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/maven/maven可选依赖/">maven可选依赖</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2017/09/22/maven/maven可选依赖/../../picture/maven_2.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/maven/maven可选依赖/" data-id="cj7vxf7e70006hwjx3sk1e1e4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-maven/maven依赖范围和classpath的关系scpoe标签" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/maven/">maven</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/">maven依赖范围和classpath的关系scpoe标签</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/../../picture/maven_4.png" alt=""></p>
+<p><strong>左边是第一依赖，右边是第二依赖</strong>  </p>
+<p><img src="/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/../../picture/maven_5.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/maven/maven依赖范围和classpath的关系scpoe标签/" data-id="cj7vxf7e80008hwjxo4twb580" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-onos/onos源码获取" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/onos/onos源码获取/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/onos/">onos</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/onos/onos源码获取/">onos源码获取</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><a href="https://github.com/opennetworkinglab/onos/releases" target="_blank" rel="external">onos源码</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/onos/onos源码获取/" data-id="cj7vxf7el000yhwjxxrn5sqgp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-problem/eclipse安装svn提示javaHL出错" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/problem/eclipse安装svn提示javaHL出错/" class="article-date">
+  <time datetime="2017-09-22T13:30:47.469Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/problem/">problem</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/22/problem/eclipse安装svn提示javaHL出错/">eclipse安装svn提示javaHL出错</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="出错信息："><a href="#出错信息：" class="headerlink" title="出错信息："></a>出错信息：</h4><p>在 windows7 中 Java 和 eclipse 都可以是64位的。如果需要配置 subclipse，中间可能会碰见 JavaHL 找不到库的问题。(图片来自网上)</p>
+<p><img src="/2017/09/22/problem/eclipse安装svn提示javaHL出错/../../picture/eclipse_javaHL.png" alt="image"></p>
+<p>  Failed to load JavaHL Library. These are the errors that were encountered: no libsvnjavahl-1 in Java.library.path no svnjavahl-1 in java.library.path no svnjavahl in java.library.path java.library.path = /usr/lib/jvm/java-6-sun-1.6.0.03/jre/lib/i386/client::/ usr/lib/jvm/java-6-sun-1.6.0.03/jre/lib/i386::/usr/lib/firefox:/usr/lib/ firefox/:/usr/java/packages/lib/i386:/lib:/usr/lib</p>
+<h4 id="出错原因："><a href="#出错原因：" class="headerlink" title="出错原因："></a>出错原因：</h4><p>  本机没有安装javaHL</p>
+<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><ol>
+<li><p>下载和svn插件版本对应的silk-subversion</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.sliksvn.com/pub</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装后重启eclipse</p>
+</li>
+</ol>
+<h4 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h4><ul>
+<li><a href="http://www.binkery.com/archives/4.html" target="_blank" rel="external">http://www.binkery.com/archives/4.html</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/problem/eclipse安装svn提示javaHL出错/" data-id="cj7vxf7ek000vhwjxz13u7ecx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/22/hello-world/" class="article-date">
-  <time datetime="2017-09-22T07:08:51.251Z" itemprop="datePublished">2017-09-22</time>
+  <time datetime="2017-09-22T13:30:05.930Z" itemprop="datePublished">2017-09-22</time>
 </a>
     
   </div>
@@ -96,7 +686,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/hello-world/" data-id="cj7vn7csl00008jjxfibco98u" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2017/09/22/hello-world/" data-id="cj7vxf7cn0000hwjxo0yhi52f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,21 +697,46 @@
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DHCP/">DHCP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/emacs/">emacs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/karaf/">karaf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/maven/">maven</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mininet/">mininet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/onos/">onos</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/problem/">problem</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li></ul>
+    </div>
+  </div>
 
-  
-    
 
-  
-    
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/emacs/" style="font-size: 10px;">emacs</a> <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
     </div>
@@ -131,12 +746,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/09/22/hello-world/">Hello World</a>
+            <a href="/2017/09/22/python/emacs配置python开发环境/">emacs配置python开发环境</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/python/virtualenv创建虚拟python环境/">virtualenv创建虚拟python环境</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/tools/markdown使用手册/">markdown使用手册</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/mininet/mininet模拟DHCP请求的topo/">mininet模拟DHCP请求的topo</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/python/python学习重点文章/">python学习重点文章</a>
           </li>
         
       </ul>

@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | 晴天无常</title>
+  <title>karaf学习笔记 | 晴天无常</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="karaf一些基本知识 1.Pressing Ctrl + D will shut down Karaf when you are on the shell; however, if you are connected remotely (using SSH), this action will just log off the SSH session, it won’t shut down Ka">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/09/22/hello-world/index.html">
+<meta property="og:title" content="karaf学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/karaf/karaf学习笔记/index.html">
 <meta property="og:site_name" content="晴天无常">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-09-22T07:08:51.251Z">
+<meta property="og:description" content="karaf一些基本知识 1.Pressing Ctrl + D will shut down Karaf when you are on the shell; however, if you are connected remotely (using SSH), this action will just log off the SSH session, it won’t shut down Ka">
+<meta property="og:updated_time" content="2017-09-22T12:00:10.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="karaf学习笔记">
+<meta name="twitter:description" content="karaf一些基本知识 1.Pressing Ctrl + D will shut down Karaf when you are on the shell; however, if you are connected remotely (using SSH), this action will just log off the SSH session, it won’t shut down Ka">
   
     <link rel="alternate" href="/atom.xml" title="晴天无常" type="application/atom+xml">
   
@@ -63,12 +63,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-karaf/karaf学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/09/22/hello-world/" class="article-date">
-  <time datetime="2017-09-22T13:30:05.930Z" itemprop="datePublished">2017-09-22</time>
+    <a href="/2017/09/22/karaf/karaf学习笔记/" class="article-date">
+  <time datetime="2017-09-22T12:00:10.776Z" itemprop="datePublished">2017-09-22</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/karaf/">karaf</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -77,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      karaf学习笔记
     </h1>
   
 
@@ -85,20 +89,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h3 id="karaf一些基本知识"><a href="#karaf一些基本知识" class="headerlink" title="karaf一些基本知识"></a>karaf一些基本知识</h3><p> 1.Pressing Ctrl + D will shut down Karaf when you are on the shell; however, if you are connected remotely (using SSH), this action will just log off the SSH session, it won’t shut down Karaf.  </p>
+<p> 2.Karaf’s interactive shell provides a powerful interface to administer the container runtime; however, most users require their application server to operate on a remote host—this is where Karaf’s built in SSH daemon steps in. By default, when a Karaf instance is started, it will bind upon port 8101 a SSHD service, which can be connected to using the provided Karaf client utility (in the Karaf’s bin folder)—its embedded SSH client, or a third-party SSH client. The default credentials are username karaf, password karaf. The default port can be edited in etc/org.apache.karaf.shell. cfg, and the credentials edited in etc/users.properties. Once connected to an instance, you may type exit to log out of the system.  </p>
+<p> 3.bin# client [–a port] [–h hostname] [–u username] [–p password] [–r retries] [–d retry-delay] [commands]  </p>
+<p> 4.To deploy the project into your Karaf container, issue the following command:<br>karaf@root&gt; install –s mvn:com.your.organization/com.your.organization. command/1.0.0-SNAPSHOT</p>
+<p> 5.webconsole：<a href="https://ipaddress:8181/system/console" target="_blank" rel="external">https://ipaddress:8181/system/console</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/hello-world/" data-id="cj7vxf7cn0000hwjxo0yhi52f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/22/karaf/karaf学习笔记/" data-id="cj7vxf7e60005hwjxpij6dauh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -107,19 +107,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/09/22/problem/eclipse安装svn提示javaHL出错/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/22/linux/linux中普通用户通过sudo来执行命令/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          eclipse安装svn提示javaHL出错
+          linux中普通用户通过sudo来执行命令
         
       </div>
     </a>
   
   
-    <a href="/2017/09/22/tools/比较好用的软件/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/09/22/linux/ubuntu服务器实现文件共享到windows/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">比较好用的软件</div>
+      <div class="article-nav-title">ubuntu服务器中的文件共享到windows</div>
     </a>
   
 </nav>

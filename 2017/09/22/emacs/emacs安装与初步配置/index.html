@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>emacs安装与初步配置 | 晴天无常</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装步骤： 下载emacs安装包 将下载的文件放到一个具体的目录下解压 解压文件后进入软件根目录/bin下面执行addpm.exe（安装emacs并且添加到开始菜单） 修改C:\Users\\AppData\Roaming.emacs（需要自己手动创建，windows不能创建 . 文件，可以打开emacs后修改配置后点击save options后会自动生成）配置文件，修改内容为 (load-fil">
+<meta property="og:type" content="article">
+<meta property="og:title" content="emacs安装与初步配置">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/emacs/emacs安装与初步配置/index.html">
+<meta property="og:site_name" content="晴天无常">
+<meta property="og:description" content="安装步骤： 下载emacs安装包 将下载的文件放到一个具体的目录下解压 解压文件后进入软件根目录/bin下面执行addpm.exe（安装emacs并且添加到开始菜单） 修改C:\Users\\AppData\Roaming.emacs（需要自己手动创建，windows不能创建 . 文件，可以打开emacs后修改配置后点击save options后会自动生成）配置文件，修改内容为 (load-fil">
+<meta property="og:updated_time" content="2017-09-22T09:22:07.930Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="emacs安装与初步配置">
+<meta name="twitter:description" content="安装步骤： 下载emacs安装包 将下载的文件放到一个具体的目录下解压 解压文件后进入软件根目录/bin下面执行addpm.exe（安装emacs并且添加到开始菜单） 修改C:\Users\\AppData\Roaming.emacs（需要自己手动创建，windows不能创建 . 文件，可以打开emacs后修改配置后点击save options后会自动生成）配置文件，修改内容为 (load-fil">
+  
+    <link rel="alternate" href="/atom.xml" title="晴天无常" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">晴天无常</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-emacs/emacs安装与初步配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/emacs/emacs安装与初步配置/" class="article-date">
+  <time datetime="2017-09-22T09:22:07.930Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/emacs/">emacs</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      emacs安装与初步配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="安装步骤："><a href="#安装步骤：" class="headerlink" title="安装步骤："></a>安装步骤：</h3><ol>
+<li>下载<a href="http://ftp.gnu.org/gnu/emacs/windows/" target="_blank" rel="external">emacs</a>安装包</li>
+<li>将下载的文件放到一个具体的目录下解压</li>
+<li>解压文件后进入软件根目录/bin下面执行addpm.exe（安装emacs并且添加到开始菜单）</li>
+<li>修改C:\Users\<username>\AppData\Roaming.emacs（需要自己手动创建，windows不能创建 . 文件，可以打开emacs后修改配置后点击save options后会自动生成）配置文件，修改内容为 (load-file “D:/emacs-23.2/.emacs”) ，这步主要是将配置文件映射到安装包路径。</username></li>
+<li><p>在.emacs中添加如下配置（添加环境变量，路径为安装包解压路径）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(setenv &quot;HOME&quot; &quot;D:/emacs-23.2&quot;)</div><div class="line">(setenv &quot;PATH&quot; &quot;D:/emacs-23.2&quot;)</div><div class="line">;;set the default file path</div><div class="line">(setq default-directory &quot;~/&quot;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改emacs的包的源，让他使用国内镜像：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(setq package-archives &apos;((&quot;gnu&quot;   . &quot;http://elpa.emacs-china.org/gnu/&quot;)</div><div class="line">                         (&quot;melpa&quot; . &quot;http://elpa.emacs-china.org/melpa/&quot;)))</div></pre></td></tr></table></figure>
+</li>
+<li><p>在windows下面打开中文文档会很卡，这是由于在MS Windows下Emacs错误的使用BatangChe这个韩文字体来显示中文，而这个韩文字体包含的中文肯定不全，于是会不停的fallback，就很卡。添加如下配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">;; -*- lexical-binding: t; -*-</div><div class="line">;; Font settings.</div><div class="line">;; Setting English Font</div><div class="line">(add-to-list &apos;default-frame-alist &apos;(height . 35))</div><div class="line">(add-to-list &apos;default-frame-alist &apos;(width . 100))</div><div class="line">;; (add-to-list &apos;default-frame-alist</div><div class="line">;;              (if (string-equal system-type &quot;windows-nt&quot;)</div><div class="line">;; 		 &apos;(font . &quot;Inconsolata-18&quot;)</div><div class="line">;; 	       &apos;(font . &quot;Inconsolata-14&quot;)))</div><div class="line">;; 微软雅黑</div><div class="line">;; 冬青黑体简体中文 W3</div><div class="line">;; Hiragino Sans GB W3</div><div class="line">;; 思源黑体 CN Regular</div><div class="line">;; Source Han Sans</div><div class="line">(defun my--set-font (&amp;optional frame)</div><div class="line">  (with-selected-frame (or frame (selected-frame))</div><div class="line">    (if (string-equal system-type &quot;windows-nt&quot;)</div><div class="line">    (progn</div><div class="line">      (set-face-attribute</div><div class="line">       &apos;default nil :font &quot;Inconsolata 18&quot;)</div><div class="line">      ;; (set-fontset-font t</div><div class="line">      ;; 		      &apos;unicode (font-spec :family &quot;Inconsolata&quot; :size 18))</div><div class="line">      ;; Chinese Font</div><div class="line">      ;; cjk-misc gb18030 chinese-gbk chinese-gb2312</div><div class="line">      (dolist (charset &apos;(han cjk-misc chinese-gbk))</div><div class="line">        (set-fontset-font &quot;fontset-default&quot;</div><div class="line">                  charset (font-spec :family &quot;冬青黑体简体中文 W3&quot;)))</div><div class="line">      (set-fontset-font &quot;fontset-default&quot;</div><div class="line">                &apos;unicode &quot;Segoe UI Symbol&quot; nil &apos;append)</div><div class="line">      (set-fontset-font &quot;fontset-default&quot;</div><div class="line">                &apos;(#x1F600 . #x1F64F) &quot;Segoe UI Symbol&quot;) ; Emoji</div><div class="line">      (set-fontset-font &quot;fontset-default&quot;</div><div class="line">                &apos;(#xE000 . #xF8FF) &quot;STIX&quot;) ; Private Use Areas</div><div class="line">      )</div><div class="line">      (progn</div><div class="line">    (set-face-attribute</div><div class="line">     &apos;default nil :font &quot;Inconsolata 14&quot;)</div><div class="line">    ;; (set-fontset-font t</div><div class="line">    ;; 		    &apos;unicode (font-spec :name &quot;Inconsolata&quot; :size 28))</div><div class="line">    (dolist (charset &apos;(kana han cjk-misc bopomofo))</div><div class="line">      (set-fontset-font &quot;fontset-default&quot;</div><div class="line">                charset (font-spec :name &quot;Hiragino Sans GB&quot;)))))</div><div class="line">    (set-fontset-font &quot;fontset-default&quot; ?– &quot;Symbola&quot;)</div><div class="line">    (set-fontset-font &quot;fontset-default&quot; ?′ &quot;Symbola&quot;)</div><div class="line">    (set-fontset-font &quot;fontset-default&quot; ?″ &quot;Symbola&quot;))</div><div class="line">  )</div><div class="line">(my--set-font)</div><div class="line">(add-hook &apos;after-make-frame-functions &apos;my--set-font)</div><div class="line">(defface strike-through</div><div class="line">  &apos;((t :strike-through t))</div><div class="line">  &quot;Basic strike through face.&quot;</div><div class="line">  :group &apos;basic-faces)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h3><ul>
+<li><a href="http://blog.csdn.net/jackieban/article/details/" target="_blank" rel="external">http://blog.csdn.net/jackieban/article/details/</a></li>
+<li><a href="https://chriszheng.science/2015/04/26/Emacs-font-settings/" target="_blank" rel="external">https://chriszheng.science/2015/04/26/Emacs-font-settings/</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/emacs/emacs安装与初步配置/" data-id="cj7vxf7e80009hwjx1qt6o76s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/22/linux/ubuntu通过apt-get安装JDK8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          通过apt-get安装JDK8
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/22/emacs/emacs配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">emacs配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DHCP/">DHCP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/emacs/">emacs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/karaf/">karaf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/maven/">maven</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mininet/">mininet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/onos/">onos</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/problem/">problem</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/emacs/" style="font-size: 10px;">emacs</a> <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/09/22/python/emacs配置python开发环境/">emacs配置python开发环境</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/python/virtualenv创建虚拟python环境/">virtualenv创建虚拟python环境</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/tools/markdown使用手册/">markdown使用手册</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/mininet/mininet模拟DHCP请求的topo/">mininet模拟DHCP请求的topo</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/python/python学习重点文章/">python学习重点文章</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 彭华伟<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

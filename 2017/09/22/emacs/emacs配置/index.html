@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>emacs配置 | 晴天无常</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374;; Added by Package.el.  This must come before configurations">
+<meta property="og:type" content="article">
+<meta property="og:title" content="emacs配置">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/emacs/emacs配置/index.html">
+<meta property="og:site_name" content="晴天无常">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374;; Added by Package.el.  This must come before configurations">
+<meta property="og:updated_time" content="2017-09-22T09:22:06.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="emacs配置">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374;; Added by Package.el.  This must come before configurations">
+  
+    <link rel="alternate" href="/atom.xml" title="晴天无常" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">晴天无常</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-emacs/emacs配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/22/emacs/emacs配置/" class="article-date">
+  <time datetime="2017-09-22T09:22:06.975Z" itemprop="datePublished">2017-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/emacs/">emacs</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      emacs配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line">;; Added by Package.el.  This must come before configurations of</div><div class="line">;; installed packages.  Don&apos;t delete this line.  If you don&apos;t want it,</div><div class="line">;; just comment it out by adding a semicolon to the start of the line.</div><div class="line">;; You may delete these explanatory comments.</div><div class="line"></div><div class="line"></div><div class="line">(custom-set-variables</div><div class="line"> ;; custom-set-variables was added by Custom.</div><div class="line"> ;; If you edit it by hand, you could mess it up, so be careful.</div><div class="line"> ;; Your init file should contain only one such instance.</div><div class="line"> ;; If there is more than one, they won&apos;t work right.</div><div class="line"> &apos;(package-selected-packages (quote (w3m flycheck material-theme elpy better-defaults)))</div><div class="line"> &apos;(send-mail-function (quote smtpmail-send-it))</div><div class="line"> &apos;(show-paren-mode t))</div><div class="line">(custom-set-faces</div><div class="line"> ;; custom-set-faces was added by Custom.</div><div class="line"> ;; If you edit it by hand, you could mess it up, so be careful.</div><div class="line"> ;; Your init file should contain only one such instance.</div><div class="line"> ;; If there is more than one, they won&apos;t work right.</div><div class="line"> )</div><div class="line"></div><div class="line">;;设置HOME和PATH</div><div class="line">(setenv &quot;HOME&quot; &quot;D:/emacs-25.1-x86_64-w64-mingw32&quot;)</div><div class="line">(setenv &quot;PATH&quot; &quot;D:/emacs-25.1-x86_64-w64-mingw32&quot;)</div><div class="line">(setq default-directory &quot;~/&quot;)</div><div class="line"></div><div class="line">;;国内包仓库镜像</div><div class="line">(setq package-archives &apos;((&quot;gnu&quot;   . &quot;http://elpa.emacs-china.org/gnu/&quot;)</div><div class="line">                         (&quot;melpa&quot; . &quot;http://elpa.emacs-china.org/melpa/&quot;)))						</div><div class="line">(package-initialize)</div><div class="line"></div><div class="line">(global-linum-mode t)</div><div class="line">;;修改中文字体</div><div class="line">(defun my--set-font (&amp;optional frame)</div><div class="line">  (with-selected-frame (or frame (selected-frame))</div><div class="line">    (if (string-equal system-type &quot;windows-nt&quot;)</div><div class="line">    (progn</div><div class="line">      (set-face-attribute</div><div class="line">       &apos;default nil :font &quot;consolas 14&quot;)</div><div class="line">      (dolist (charset &apos;(han cjk-misc chinese-gbk))</div><div class="line">        (set-fontset-font &quot;fontset-default&quot;</div><div class="line">                  charset (font-spec :family &quot;微软雅黑&quot; :size 14)))</div><div class="line">      (set-fontset-font &quot;fontset-default&quot;</div><div class="line">                &apos;unicode &quot;Segoe UI Symbol&quot; nil &apos;append)</div><div class="line">      (set-fontset-font &quot;fontset-default&quot;</div><div class="line">                &apos;(#x1F600 . #x1F64F) &quot;Segoe UI Symbol&quot;) ; Emoji</div><div class="line">      (set-fontset-font &quot;fontset-default&quot;</div><div class="line">                &apos;(#xE000 . #xF8FF) &quot;STIX&quot;) ; Private Use Areas</div><div class="line">      )</div><div class="line">      (progn</div><div class="line">    (set-face-attribute</div><div class="line">     &apos;default nil :font &quot;consolas 14&quot;)</div><div class="line">    (dolist (charset &apos;(kana han cjk-misc bopomofo))</div><div class="line">      (set-fontset-font &quot;fontset-default&quot;</div><div class="line">                charset (font-spec :name &quot;Hiragino Sans GB&quot;)))))</div><div class="line">    (set-fontset-font &quot;fontset-default&quot; ?– &quot;Symbola&quot;)</div><div class="line">    (set-fontset-font &quot;fontset-default&quot; ?′ &quot;Symbola&quot;)</div><div class="line">    (set-fontset-font &quot;fontset-default&quot; ?″ &quot;Symbola&quot;))</div><div class="line">  )</div><div class="line">(my--set-font)</div><div class="line">(add-hook &apos;after-make-frame-functions &apos;my--set-font)</div><div class="line">(defface strike-through</div><div class="line">  &apos;((t :strike-through t))</div><div class="line">  &quot;Basic strike through face.&quot;</div><div class="line">  :group &apos;basic-faces)</div><div class="line"></div><div class="line">(require &apos;package)</div><div class="line"></div><div class="line">(load-theme &apos;material t)</div><div class="line">(elpy-enable)</div><div class="line"></div><div class="line">(when (require &apos;flycheck nil t)</div><div class="line">  (setq elpy-modules (delq &apos;elpy-module-flymake elpy-modules))</div><div class="line">  (add-hook &apos;elpy-mode-hook &apos;flycheck-mode))</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/22/emacs/emacs配置/" data-id="cj7vxf7e30002hwjxqnj351f5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/22/emacs/emacs安装与初步配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          emacs安装与初步配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/22/linux/linux下代码行数统计/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux下代码行数统计</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DHCP/">DHCP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/emacs/">emacs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/karaf/">karaf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/maven/">maven</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mininet/">mininet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/onos/">onos</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/problem/">problem</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/emacs/" style="font-size: 10px;">emacs</a> <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/09/22/python/emacs配置python开发环境/">emacs配置python开发环境</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/python/virtualenv创建虚拟python环境/">virtualenv创建虚拟python环境</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/tools/markdown使用手册/">markdown使用手册</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/mininet/mininet模拟DHCP请求的topo/">mininet模拟DHCP请求的topo</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/22/python/python学习重点文章/">python学习重点文章</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 彭华伟<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | 晴天无常</title>
+  <title>emacs配置python开发环境 | 晴天无常</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="配置流程 修改emacs获取包的源（emacs的配置文件当中，比如说.emacs或者自定义的配置文件），这样下载会快一点 12(setq package-archives &amp;apos;((&amp;quot;gnu&amp;quot;   . &amp;quot;http://elpa.emacs-china.org/gnu/&amp;quot;)                         (&amp;quot;melpa&amp;quo">
+<meta name="keywords" content="emacs,python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/09/22/hello-world/index.html">
+<meta property="og:title" content="emacs配置python开发环境">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/python/emacs配置python开发环境/index.html">
 <meta property="og:site_name" content="晴天无常">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-09-22T07:08:51.251Z">
+<meta property="og:description" content="配置流程 修改emacs获取包的源（emacs的配置文件当中，比如说.emacs或者自定义的配置文件），这样下载会快一点 12(setq package-archives &amp;apos;((&amp;quot;gnu&amp;quot;   . &amp;quot;http://elpa.emacs-china.org/gnu/&amp;quot;)                         (&amp;quot;melpa&amp;quo">
+<meta property="og:updated_time" content="2017-09-22T13:32:40.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="emacs配置python开发环境">
+<meta name="twitter:description" content="配置流程 修改emacs获取包的源（emacs的配置文件当中，比如说.emacs或者自定义的配置文件），这样下载会快一点 12(setq package-archives &amp;apos;((&amp;quot;gnu&amp;quot;   . &amp;quot;http://elpa.emacs-china.org/gnu/&amp;quot;)                         (&amp;quot;melpa&amp;quo">
   
     <link rel="alternate" href="/atom.xml" title="晴天无常" type="application/atom+xml">
   
@@ -63,12 +64,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-python/emacs配置python开发环境" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/09/22/hello-world/" class="article-date">
-  <time datetime="2017-09-22T13:30:05.930Z" itemprop="datePublished">2017-09-22</time>
+    <a href="/2017/09/22/python/emacs配置python开发环境/" class="article-date">
+  <time datetime="2017-09-22T13:32:40.389Z" itemprop="datePublished">2017-09-22</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -77,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      emacs配置python开发环境
     </h1>
   
 
@@ -85,41 +90,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h3 id="配置流程"><a href="#配置流程" class="headerlink" title="配置流程"></a>配置流程</h3><ol>
+<li><p>修改emacs获取包的源（emacs的配置文件当中，比如说.emacs或者自定义的配置文件），这样下载会快一点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(setq package-archives &apos;((&quot;gnu&quot;   . &quot;http://elpa.emacs-china.org/gnu/&quot;)</div><div class="line">                         (&quot;melpa&quot; . &quot;http://elpa.emacs-china.org/melpa/&quot;)))</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开emacs，通过M-X package-list-packages查看可安装的包目录，可通过点击来安装需要的包</p>
+</li>
+<li><p>修改配置让安装的包可以启动，在配置文件中需要添加一下代码可以让emacs能找到对应的包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(require &apos;package)</div></pre></td></tr></table></figure>
+</li>
+<li><p>比如说我要安装一个主题（metarial-theme）</p>
+<ol>
+<li>执行M-X package-list-packages,找到对应的metarial-theme的包，然后点击install</li>
+<li>修改.emacs文件，添加代码(load-theme ‘material t)，然后重新启动（注意，记得添加require）</li>
+</ol>
+</li>
+<li>安装python编辑环境的时候先安装flake8,jedi(代码语法检查和自动补齐的包)<ol>
+<li>可通过打开cmd，然后执行python -m pip install flake8来安装</li>
+<li>jedi类似</li>
+</ol>
+</li>
+<li>通过M-x package-list-packages 找到elpy包进行安装，elpy（Emacs Lisp Python Environment）插件可以说为我们提供了Python开发环境所需要的几乎全部功能，包括：<ul>
+<li>自动缩进</li>
+<li>语法高亮</li>
+<li>自动补全</li>
+<li>语法检查</li>
+<li>REPL集成</li>
+<li>虚拟环境支持，以及</li>
+<li>更多其他功能</li>
+</ul>
+</li>
+<li>在配置文件中添加(elpy enable),然后重新启动就行了</li>
+</ol>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><a href="http://codingpy.com/article/emacs-the-best-python-editor/" target="_blank" rel="external">http://codingpy.com/article/emacs-the-best-python-editor/</a></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/22/hello-world/" data-id="cj7vxf7cn0000hwjxo0yhi52f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/22/python/emacs配置python开发环境/" data-id="cj7vxf7eo0013hwjx0x9hqxar" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emacs/">emacs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2017/09/22/problem/eclipse安装svn提示javaHL出错/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          eclipse安装svn提示javaHL出错
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/22/tools/比较好用的软件/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/09/22/python/virtualenv创建虚拟python环境/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">比较好用的软件</div>
+      <div class="article-nav-title">virtualenv创建虚拟python环境</div>
     </a>
   
 </nav>
